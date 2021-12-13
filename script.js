@@ -1,7 +1,8 @@
 const buttons = document.getElementsByClassName('button');
 const display = document.getElementById('display');
 
-const allowed_chars = ['1','2','3','4','5','6','7','8','9','0','-','+','x','X','*','/','.','!','c','C','=','CE','^'];
+const allowed_chars = ['1','2','3','4','5','6','7','8','9','0','-','+','x','X','*','/','.','!','c','C','=','CE','^', '()', '(', ')'];
+let opening_brace = true;
 const numbers = ['1','2','3','4','5','6','7','8','9','0',];
 const multipliers = ['x','X','*'];
 
@@ -34,6 +35,11 @@ function button_press(char)
     let dis = display.innerHTML.toString();
     let equation = dis.split('x').join('*').split('&nbsp;').join(' ').split(' ');
     console.log(equation);
+  }
+  else if (char === '()')
+  {
+    display.innerText += ' ' + (opening_brace === true ? '(' : ')');
+    opening_brace = !opening_brace;
   }
   else
   {
