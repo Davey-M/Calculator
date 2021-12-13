@@ -10,8 +10,10 @@
   --text: white;
   --grey: #272727;
   --light-grey: #aaaaaa;
+  --mid-grey: #8d8d8d;
   --shadow: #0000004f;
   --yellow: #eea929;
+  --light-yellow: #ffcd70;
 }
 
 #container {
@@ -58,4 +60,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--light-yellow);
+}
+
+.number {
+  background-color: var(--light-grey);
+  transition: all 0.2s;
+}
+
+.number:hover {
+  cursor: pointer;
+  background-color: var(--mid-grey);
 }
