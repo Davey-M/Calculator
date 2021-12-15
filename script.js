@@ -20,7 +20,7 @@ function button_press(char)
   
   if (numbers.includes(char))
   {
-    display.innerText += char
+    display.innerText += char;
   }
   else if (char === 'c' || char === 'C')
   {
@@ -38,13 +38,42 @@ function button_press(char)
   }
   else if (char === '()')
   {
-    display.innerText += ' ' + (opening_brace === true ? '(' : ')');
+    display.innerHTML += ' ' + (opening_brace === true ? '(' + '&nbsp' : ')');
     opening_brace = !opening_brace;
   }
   else
   {
     display.innerHTML += ' ' + char + '&nbsp';
   }
+}
+
+class calc
+{
+    constructor(x, y)
+    {
+        this.x = x ?? 0;
+        this.y = y ?? 0;
+    }
+    
+    multi()
+    {
+        return this.x * this.y;
+    }
+
+    divide()
+    {
+        return this.x / this.y;
+    }
+
+    add()
+    {
+        return this.x + this.y;
+    }
+
+    sub()
+    {
+        return this.x - this.y;
+    }   
 }
 
 for (let b of buttons)
